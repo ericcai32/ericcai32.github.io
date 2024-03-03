@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <title>Farmland Potential Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</html>
+
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html"><img src="atlas_logo.png"></a>
+    </div>
+    <div class="navbar-place">
+    </div>
+    <div>
+        <h1>Farming Potential</h1>
+    </div>
+    <div class="map-inputs">
+        <div class="inner">
+            <label>Coordinates: </label>
+            <input type="text" id="latlong" placeholder="0.000, 0.000">
+            <button onclick="checkLocation()">Submit</button>
+        </div>
+    </div>
+    <div class="map-div">
+        <div id="stats">
+            <h1 id="coords">Click anywhere in North Carolina or enter coordinates above to view farming potential.</h1>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        let navbar = document.getElementById("navbar");
+        navbar.style.display = "flex";
+
+        let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        let mapWidth = (70 * viewportWidth) / 100
+        let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        let mapHeight = (77 * viewportHeight) / 100
+
+        let map = document.getElementById("map")
+        map.setAttribute("width", mapWidth)
+        map.setAttribute("height", mapHeight)
+    
+
+    </script>
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmSzImOzSIVqGLKXi1ppJJWBlc8iYXJm4&callback=initMap&v=weekly"
+    defer
+    ></script>
+    <script src="ML.js"></script>
+    <script src="map.js"></script>
+
+</body>
